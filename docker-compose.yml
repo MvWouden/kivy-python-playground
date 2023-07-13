@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  hello_world_app:
+    build:
+        context: .
+    container_name: hello_world_app

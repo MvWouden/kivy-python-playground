@@ -1,0 +1,14 @@
+[flake8]
+exclude =
+    .git
+    .mypy_cache
+    .pytest_cache
+    build
+    docs
+    dist
+    tests
+    venv
+ignore = E501, W503, E226
+max-line-length = 79
+docstring_style=numpy
+docstring-convention=numpy

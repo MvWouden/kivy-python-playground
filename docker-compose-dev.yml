@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  hello_world_app:
+    build:
+        context: .
+        dockerfile: Dockerfile-dev
+    container_name: hello_world_app_dev
