@@ -1,13 +1,17 @@
 [tool.poetry]
-name = "modern-python-setup"
+name = "kivy-playground"
 version = "0.1.0"
-description = "A modern python project setup."
+description = "A kivy playground."
 authors = ["Milan van Wouden <milanvanwouden@live.nl>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
+[tool.poetry.scripts]
+pong = "src.kivy_playground.pong.main:run_pong_app"
+
 [tool.poetry.dependencies]
 python = "^3.11"
+kivy = {extras = ["base"], version = "^2.2.1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.12.0"
@@ -45,11 +49,16 @@ python_version = 3.11
 packages = ["src"]
 check_untyped_defs = true
 disallow_untyped_defs = true
-disallow_any_unimported = true
+disallow_any_unimported = false
 no_implicit_optional = true
 show_error_codes = true
 warn_return_any = true
 warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "kivy.*"
+ignore_missing_imports = true
+allow_any_unimported = true
 
 [tool.pytest]
 minversion = 7

@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  hello_world_app:
+  kivy_playground_app:
     build:
         context: .
         dockerfile: Dockerfile-dev
-    container_name: hello_world_app_dev
+    container_name: kivy_playground_app_dev

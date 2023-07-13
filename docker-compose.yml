@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  hello_world_app:
+  kivy_playground_app:
     build:
         context: .
-    container_name: hello_world_app
+    container_name: kivy_playground_app

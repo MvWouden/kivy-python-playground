@@ -43,4 +43,4 @@ COPY --chown=non-priviliged-user:non-priviliged-user src src
 ENV ENV prod
 ENV APP_ENV $ENV
 
-CMD ["python", "src/hello_world/hello_world.py"]
+CMD ["python", "src/kivy_playground/hello_world.py"]

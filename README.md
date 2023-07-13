@@ -1,6 +1,4 @@
-# modern-python-setup
-
-A modern python setup, complete with CI, testing, linting, static analysis which is dockerized.
+# kivy-python-playground
 
 ## Commands
 
@@ -27,7 +25,7 @@ docker compose down
 Running a command in the container:
 
 ```shell
-docker compose run hello_world_app <command>
+docker compose run kivy_playground_app <command>
 ```
 
 ### Poetry

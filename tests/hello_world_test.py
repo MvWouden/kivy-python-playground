@@ -1,6 +1,6 @@
 from pytest import LogCaptureFixture, raises
 
-from src.hello_world.hello_world import get_hello_world
+from src.kivy_playground.hello_world import get_hello_world
 
 
 def test_hello_world(

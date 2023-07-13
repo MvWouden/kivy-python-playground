@@ -11,7 +11,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 
-project = "Modern Python Setup"
+project = "Kivy Playground"
 copyright = "2023, Milan van Wouden"
 author = "Milan van Wouden"
 

@@ -1,7 +1,7 @@
-hello_world
-===========
+kivy_playground
+===============
 
 .. toctree::
    :maxdepth: 4
 
-   hello_world
+   kivy_playground
