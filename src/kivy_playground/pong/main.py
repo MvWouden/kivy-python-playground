@@ -6,8 +6,10 @@ from kivy.app import App
 from kivy.lang.builder import Builder
 from kivy.uix.widget import Widget
 
-from src.kivy_playground.pong.pong_ball import PongBall  # noqa: F401
-from src.kivy_playground.pong.pong_game import PongGame
+from src.kivy_playground.pong.widgets.ball.pong_ball import (  # noqa: F401
+    PongBall,
+)
+from src.kivy_playground.pong.widgets.game.pong_game import PongGame
 
 kivy.require("2.2.1")
 DIR_PATH: str = os.path.dirname(os.path.realpath(__file__))
@@ -18,8 +20,12 @@ class PongApp(App):
 
     def build(self) -> Widget:
         """Build the pong application and register files."""
-        Builder.load_file(str(Path(DIR_PATH) / "pong_game.kv"))
-        Builder.load_file(str(Path(DIR_PATH) / "pong_ball.kv"))
+        Builder.load_file(
+            str(Path(DIR_PATH) / "widgets" / "game" / "pong_game.kv")
+        )
+        Builder.load_file(
+            str(Path(DIR_PATH) / "widgets" / "ball" / "pong_ball.kv")
+        )
 
         return PongGame()
 
