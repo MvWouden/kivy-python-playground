@@ -38,9 +38,9 @@ RUN groupadd --gid $USER_GID $USERNAME; \
 USER $USERNAME
 
 WORKDIR /app
-COPY --chown=non-priviliged-user:non-priviliged-user src src
+COPY --chown=non-priviliged-user:non-priviliged-user kivy_playground kivy_playground
 
 ENV ENV prod
 ENV APP_ENV $ENV
 
-CMD ["python", "src/kivy_playground/hello_world.py"]
+CMD ["python", "kivy_playground/hello_world.py"]

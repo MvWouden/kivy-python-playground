@@ -109,7 +109,7 @@ pre-commit run -a
 Build the modules:
 
 ```shell
-poetry run sphinx-apidoc -f -o docs src/<package_name>
+poetry run sphinx-apidoc -f -o docs kivy_playground
 ```
 
 Build the documentation files:

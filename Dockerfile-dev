@@ -18,10 +18,10 @@ RUN python3 -m venv --copies /app/venv; \
     poetry install --no-root --no-interaction --with dev
 ENV PATH /app/venv/bin:$PATH
 
-COPY src src
+COPY kivy_playground kivy_playground
 COPY tests tests
 
 ENV ENV dev
 ENV APP_ENV $ENV
 
-CMD ["poetry", "run", "pytest", "--cov-report", "term-missing", "--cov=src", "--typeguard-packages=src"]
+CMD ["poetry", "run", "pytest", "--cov-report", "term-missing", "--cov=kivy_playground", "--typeguard-packages=kivy_playground"]

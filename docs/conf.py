@@ -9,7 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../src"))
+sys.path.insert(0, os.path.abspath("../kivy_playground"))
 
 project = "Kivy Playground"
 copyright = "2023, Milan van Wouden"

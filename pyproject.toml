@@ -4,10 +4,10 @@ version = "0.1.0"
 description = "A kivy playground."
 authors = ["Milan van Wouden <milanvanwouden@live.nl>"]
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "kivy_playground"}]
 
 [tool.poetry.scripts]
-pong = "src.kivy_playground.pong.main:run_pong_app"
+pong = "kivy_playground.pong.main:run_pong_app"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -46,7 +46,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.mypy]
 python_version = 3.11
-packages = ["src"]
+packages = ["kivy_playground"]
 check_untyped_defs = true
 disallow_untyped_defs = true
 disallow_any_unimported = false

@@ -16,6 +16,6 @@ class PongBall(Widget):
     # referencelist property so we can use ball.velocity as a shorthand
     velocity: tuple[int, int] = ReferenceListProperty(velocity_x, velocity_y)
 
-    def move(self) -> None:
+    def move(self: "PongBall") -> None:
         """Move the ball one step using its velocity."""
         self.pos += Vector(*self.velocity)

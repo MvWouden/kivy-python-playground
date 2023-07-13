@@ -37,10 +37,14 @@ repos:
     rev: 5.12.0
     hooks:
     -   id: isort
--   repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
+-   repo: local
     hooks:
     -   id: flake8
+        name: flake8
+        entry: poetry run flake8 --count --statistics
+        language: system
+        pass_filenames: false
+        always_run: true
 -   repo: local
     hooks:
     -   id: mypy
