@@ -16,6 +16,7 @@ DIR_PATH: Path = Path(__file__).resolve().parent
 WIDGETS: tuple[str, ...] = (
     str(DIR_PATH / "widgets" / "game" / "pong_game.kv"),
     str(DIR_PATH / "widgets" / "ball" / "pong_ball.kv"),
+    str(DIR_PATH / "widgets" / "paddle" / "pong_paddle.kv"),
 )
 for widget_kv in WIDGETS:
     Builder.load_file(widget_kv)
