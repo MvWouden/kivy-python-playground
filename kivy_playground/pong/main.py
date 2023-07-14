@@ -1,8 +1,8 @@
-import importlib
 from pathlib import Path
 
 import kivy
 from kivy.app import App
+from kivy.clock import Clock
 from kivy.lang.builder import Builder
 from kivy.uix.widget import Widget
 
@@ -11,17 +11,14 @@ from kivy_playground.pong.widgets.game.pong_game import PongGame
 
 kivy.require("2.2.1")
 
+# Load Widgets dependencies
 DIR_PATH: Path = Path(__file__).resolve().parent
-WIDGETS: tuple[tuple[str, str], ...] = (
-    (
-        "kivy_playground.pong.widgets.game",
-        str(DIR_PATH / "widgets" / "game" / "pong_game.kv"),
-    ),
-    (
-        "kivy_playground.pong.widgets.ball",
-        str(DIR_PATH / "widgets" / "ball" / "pong_ball.kv"),
-    ),
+WIDGETS: tuple[str, ...] = (
+    str(DIR_PATH / "widgets" / "game" / "pong_game.kv"),
+    str(DIR_PATH / "widgets" / "ball" / "pong_ball.kv"),
 )
+for widget_kv in WIDGETS:
+    Builder.load_file(widget_kv)
 
 
 class PongApp(App):
@@ -35,12 +32,15 @@ class PongApp(App):
         Widget
             The pong application.
         """
-        # Load Widgets dependencies
-        for widget, widget_kv in WIDGETS:
-            importlib.import_module(widget)
-            Builder.load_file(widget_kv)
+        game = PongGame()
 
-        return PongGame()
+        # 60 ticks per second clock
+        Clock.schedule_interval(game.update, 1.0 / 60.0)
+
+        # Start movement of ball
+        game.ball.init_velocity()
+
+        return game
 
 
 def run_pong_app() -> None:
